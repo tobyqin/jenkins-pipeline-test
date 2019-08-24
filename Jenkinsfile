@@ -3,6 +3,7 @@
 def initSonarRunner() {
     sonarRunnerUrl = "http://admin:admin@localhost:8080/userContent/sonar-runner-dist-2.4.zip"
     sonarRunnerLocation = "/tmp/sonar-runner-2.4/bin/sonar-runner"
+    echo "Initialize Sonar-Runner..."
     sh """
     if [ ! -f "$sonarRunnerLocation" ]; then
         cd /tmp
@@ -11,6 +12,7 @@ def initSonarRunner() {
         chmod +x "$sonarRunnerLocation"
     fi
     """
+    echo "Installed to '$sonarRunnerLocation'"
     return sonarRunnerLocation
 
 }
