@@ -2,10 +2,13 @@
 
 def initSonarRunner() {
     sonarRunnerUrl = "http://admin:admin@localhost:8080/userContent/sonar-runner-dist-2.4.zip"
-    sonarRunnerLocation = "/temp/sonar-runner-2.4/bin/sonar-runner"
-    sh """curl $sonarRunnerUrl > /temp/sonar.zip
-        unzip /temp/sonar.zip
+    sonarRunnerLocation = "/tmp/sonar-runner-2.4/bin/sonar-runner"
+    sh """
+    if [ ! -f "$sonarRunnerLocation"]; then
+        curl $sonarRunnerUrl > /tmp/sonar.zip
+        unzip /tmp/sonar.zip
         chmod +x $sonarRunnerLocation
+    fi
     """
     return sonarRunnerLocation
 
