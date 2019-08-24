@@ -18,6 +18,8 @@ def initSonarRunner() {
 node() {
     stage('sonar') {
         sh 'env'
-        initSonarRunner()
+        runner = initSonarRunner()
+        echo runner
+        sh "$runner"
     }
 }
