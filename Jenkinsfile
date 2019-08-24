@@ -12,7 +12,6 @@ def initSonarRunner() {
         chmod +x "$sonarRunnerLocation"
     fi
     """
-    echo "Installed to '$sonarRunnerLocation'"
     return sonarRunnerLocation
 
 }
@@ -23,5 +22,6 @@ node() {
         runner = initSonarRunner()
         echo runner
         sh "$runner"
+
     }
 }
