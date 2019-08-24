@@ -3,6 +3,6 @@
 node(){
     stage('test'){
         sh 'env'
-        sh 'which gradle'
+        sh 'which bash'
     }
 }
