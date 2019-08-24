@@ -5,8 +5,9 @@ def initSonarRunner() {
     sonarRunnerLocation = "/tmp/sonar-runner-2.4/bin/sonar-runner"
     sh """
     if [ ! -f "$sonarRunnerLocation" ]; then
-        curl "$sonarRunnerUrl" > /tmp/sonar.zip
-        unzip /tmp/sonar.zip
+        cd /tmp
+        curl "$sonarRunnerUrl" > sonar.zip
+        unzip sonar.zip
         chmod +x "$sonarRunnerLocation"
     fi
     """
