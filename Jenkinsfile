@@ -27,7 +27,7 @@ node() {
           -Dsonar.projectVersion=1.0 \
           -Dsonar.java.binaries=./target/classes \
           -Dsonar.sources=. \
-          -Dsonar.host.url=http://sonarqube:9001"
+          -Dsonar.host.url=http://172.17.0.3:9001"
 
     }
 }
