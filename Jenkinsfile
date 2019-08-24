@@ -1,10 +1,8 @@
-pipeline {
-    agent any
-    stages {
-        stage('build') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
+#!groovy
+
+node(){
+    stage('test'){
+        sh 'env'
+        sh 'which gradle'
     }
 }
