@@ -1,11 +1,10 @@
-pipeline{
-    agent {any}
+pipeline {
+    agent { any }
     stages {
-        stage('hello'){
-            script{
-                sh "echo hello"
+        stage('build') {
+            steps {
+                sh 'mvn --version'
             }
         }
     }
-
 }
