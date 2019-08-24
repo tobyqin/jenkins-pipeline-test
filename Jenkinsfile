@@ -21,7 +21,12 @@ node() {
         sh 'env'
         runner = initSonarRunner()
         echo runner
-        sh "$runner"
+        sh "$runner \
+          -Dsonar.projectKey=pipeline-test \
+          -Dsonar.organization=tobyqin-github \
+          -Dsonar.sources=. \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=16287f6b8a01299b68a6e4f46b8dec51cba7aad9"
 
     }
 }
